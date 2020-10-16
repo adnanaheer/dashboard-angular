@@ -1,0 +1,106 @@
+<mat-toolbar color="primary" style="border-bottom: 1px solid #ff9100;" class="example-toolbar">
+
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span fxLayoutAlign="center center">
+    <img style="height: auto;width: 150px;" src="./assets/logo.png" alt="">
+  </span>
+
+  <span class="example-spacer"></span>
+
+  <div fxLayoutAlign="space-between" fxLayoutGap="20px">
+    <span fxHide.xs class="material-icons">search</span>
+    <span fxHide.xs class="material-icons">settings</span>
+    <span fxHide.xs class="material-icons">notifications</span>
+    <span class="material-icons" [matMenuTriggerFor]="menu">account_circle</span>
+    <mat-menu #menu="matMenu">
+      <span routerLink="/login" mat-menu-item>Login</span>
+      <span routerLink="/signup" mat-menu-item>Sign Up</span>
+    </mat-menu>
+  </div>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()">
+
+    <mat-nav-list>
+
+      <!-- <span fxLayout="row wrap" fxLayoutAlign="center center">
+        <a mat-list-item href="...">
+        <img style="width: 50px;height: 50px;margin-top: 10px;margin-bottom: 15px;" src="./assets/baglogo.png" alt="">
+        </a>
+          <img class="img" *ngIf="isExpanded || isShowing" src="./assets/shopping.png" alt="">
+      </span> -->
+      
+
+      <!-- <div class="circular--landscape">
+        <img src="../assets/login.logo.jpg" alt="photo">
+      </div>
+
+      <mat-list-item fxLayoutAlign="center" (click)="showmenu = !showmenu" class="parent">
+        <span class="full-width style" *ngIf="isExpanded || isShowing">Jhon</span>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showmenu}" *ngIf="isExpanded || isShowing">expand_more
+        </mat-icon>
+      </mat-list-item>
+
+      <div fxLayoutGap="30px" fxLayoutAlign="center" class="menu" [ngClass]="{'expanded' : showmenu}"
+        *ngIf="isShowing || isExpanded">
+        <span class="material-icons icon">mail</span>
+        <span class="material-icons icon"> people </span>
+        <span class="material-icons icon">grade</span>
+      </div> -->
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        <span routerLink="home" class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>store</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Store</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>shopping_cart</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Shopping</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>receipt</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Billing</span>
+      </mat-list-item>
+
+
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more
+        </mat-icon>
+      </mat-list-item>
+
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+        <a mat-list-item href="...">Submenu Item 1</a>
+        <a mat-list-item href="...">Submenu Item 2</a>
+
+        <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">
+            expand_more</mat-icon>
+        </mat-list-item>
+
+        <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+          <mat-list-item>SubSubmenu Item 1</mat-list-item>
+          <mat-list-item>SubSubmenu Item 2</mat-list-item>
+        </div>
+
+      </div>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+</mat-sidenav-container>

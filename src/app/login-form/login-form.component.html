@@ -1,0 +1,30 @@
+<div class="hit" fxFlex fxLayoutAlign="center center">
+    <form>
+        <mat-card class="wid" fxLayout="column" fxLayoutGap="20px">
+    
+            <mat-toolbar fxLayoutAlign="center center">
+                <span>Login Form</span>
+            </mat-toolbar>
+
+            <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            </mat-form-field>
+            <div fxFlex fxLayoutAlign="center center" >
+                <button fxFlex="50%" routerLink="/nav" mat-raised-button>Signin</button>
+                <button fxFlex="50%" routerLink="/signup" mat-raised-button>Sign Up</button>
+            </div>
+
+        </mat-card>
+    </form>
+</div>
