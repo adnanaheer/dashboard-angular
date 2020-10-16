@@ -12,7 +12,6 @@
 
   <div fxLayoutAlign="space-between" fxLayoutGap="20px">
     <span fxHide.xs class="material-icons">search</span>
-    <span fxHide.xs class="material-icons">settings</span>
     <span fxHide.xs class="material-icons">notifications</span>
     <span class="material-icons" [matMenuTriggerFor]="menu">account_circle</span>
     <mat-menu #menu="matMenu">
@@ -23,12 +22,12 @@
 
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container" autosize>
+<mat-sidenav-container class="example-container " autosize>
 
-  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+  <mat-sidenav #sidenav class="example-sidenav " mode="side" opened="true" (mouseenter)="mouseenter()"
     (mouseleave)="mouseleave()">
 
-    <mat-nav-list>
+    <mat-nav-list class="sidenav" >
 
       <!-- <span fxLayout="row wrap" fxLayoutAlign="center center">
         <a mat-list-item href="...">
@@ -73,6 +72,11 @@
       <mat-list-item>
         <mat-icon mat-list-icon>receipt</mat-icon>
         <span class="full-width" *ngIf="isExpanded || isShowing">Billing</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Settings</span>
       </mat-list-item>
 
 
