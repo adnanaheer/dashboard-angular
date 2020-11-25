@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component'
 
 const routes: Routes = [
@@ -23,10 +22,7 @@ const routes: Routes = [
     path: 'signup',
     component: SignupFormComponent
   },
-  {
-    path: 'home',
-    component: HomeComponent
-  }
+
 ];
 
 @NgModule({
