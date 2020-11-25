@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
 
@@ -28,7 +27,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -38,8 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    NavComponent,
-    HomeComponent
+    NavComponent
+    
   ],
   imports: [
     BrowserModule,
